@@ -16,6 +16,7 @@ NeoBundle 'Shougo/vimproc'
 NeoBundle 'Shougo/vimshell'
 NeoBundle 'Shougo/neocomplete.vim'
 NeoBundle 'taku-o/vim-toggle'
+NeoBundle 'mhinz/vim-startify'
 " from Vim scripts
 NeoBundle 'The-NERD-tree'
 NeoBundle 'The-NERD-Commenter'
@@ -116,11 +117,20 @@ let g:neocomplete#sources#omni#input_patterns.perl = '\h\w*->\h\w*\|\h\w*::'
 "==================================================
 
 "==================================================
+" START Startify Plugin Config
+"==================================================
+" Launch Startify and move cursor to top.
+autocmd VimEnter * if !argc() | Startify | 1 | endif
+"==================================================
+" END Startify Plugin Config
+"==================================================
+
+"==================================================
 " START NERDTree Plugin Config
 "==================================================
 " Run NERDTree when vim launch without args.
 autocmd vimenter * if !argc() | NERDTree | endif
-" Close NERDTree when showing NERDTree only.
+" Close Vim when showing NERDTree only.
 autocmd bufenter * if (winnr("$") == 1 && exists("b:NERDTreeType") && b:NERDTreeType == "primary") | q | endif
 " Show hidden files.
 let g:NERDTreeShowHidden =1
@@ -193,6 +203,9 @@ endif
 "==================================================
 helptags ~/.vim/doc
 set helplang =ja,en
+set confirm
 "==================================================
 " END Other Config
 "==================================================
+
+

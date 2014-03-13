@@ -4,6 +4,7 @@ The-NERD-Commenter
 The-NERD-tree
 neobundle.vim
 neocomplete.vim
+vim-startify
 vim-toggle
 vimproc
 vimshell
