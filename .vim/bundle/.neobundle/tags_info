@@ -2,8 +2,11 @@ Align
 AutoClose
 The-NERD-Commenter
 The-NERD-tree
+gundo.vim
+lightline.vim
 neobundle.vim
 neocomplete.vim
+tagbar
 vim-startify
 vim-toggle
 vimproc
