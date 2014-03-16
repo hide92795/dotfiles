@@ -20,10 +20,10 @@ NeoBundle 'mhinz/vim-startify'
 NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'sjl/gundo.vim'
+NeoBundle 'fuenor/im_control.vim'
 " from Vim scripts
 NeoBundle 'The-NERD-tree'
 NeoBundle 'The-NERD-Commenter'
-NeoBundle 'AutoClose'
 NeoBundle 'Align'
 
 filetype plugin indent on
@@ -219,6 +219,10 @@ let g:gundo_right = 1
 "==================================================
 set backspace =indent,eol,start
 set whichwrap =b,s,h,l,<,>,[,]
+set tabstop =4
+set shiftwidth =4
+let IM_CtrlMode = 4
+inoremap <silent> <C-j> <C-^><C-r>=IMState('FixMode')<CR>
 "==================================================
 " END Editor Config
 "==================================================
