@@ -21,6 +21,7 @@ NeoBundle 'itchyny/lightline.vim'
 NeoBundle 'majutsushi/tagbar'
 NeoBundle 'sjl/gundo.vim'
 NeoBundle 'fuenor/im_control.vim'
+NeoBundle 'koron/codic-vim'
 " from Vim scripts
 NeoBundle 'The-NERD-tree'
 NeoBundle 'The-NERD-Commenter'
@@ -213,12 +214,12 @@ let g:gundo_right = 1
 " END Gundo Plugin Config
 "==================================================
 
-
 "==================================================
 " START Editor Config
 "==================================================
 set backspace =indent,eol,start
 set whichwrap =b,s,h,l,<,>,[,]
+nmap <F10> :set list!<CR>
 set list
 set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«
 set smarttab
@@ -283,4 +284,19 @@ set confirm
 " END Other Config
 "==================================================
 
-
+"==================================================
+" START Scouter
+"==================================================
+function! Scouter(file, ...)
+	let pat = '^\s*$\|^\s*"'
+	let lines = readfile(a:file)
+	if !a:0 || !a:1
+		let lines = split(substitute(join(lines, "\n"), '\n\s*\\', '', 'g'), "\n")
+	endif
+	return len(filter(lines,'v:val !~ pat'))
+endfunction
+command! -bar -bang -nargs=? -complete=file Scouter
+\        echo Scouter(empty(<q-args>) ? $MYVIMRC : expand(<q-args>), <bang>0)
+"==================================================
+" END Scouter
+"==================================================
