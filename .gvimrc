@@ -8,6 +8,7 @@ if has('gui_macvim')
 	"set lines =40
 	"set columns =140
 	set guioptions-=T
+	set guifont =Migu-1M-Regular:h14
 endif
 
 if has("gui_running")
@@ -17,5 +18,3 @@ endif
 "==================================================
 " END MacVim GUI Config
 "==================================================
-
-

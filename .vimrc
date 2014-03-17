@@ -219,6 +219,9 @@ let g:gundo_right = 1
 "==================================================
 set backspace =indent,eol,start
 set whichwrap =b,s,h,l,<,>,[,]
+set list
+set listchars=tab:»-,trail:-,eol:↲,extends:»,precedes:«
+set smarttab
 set tabstop =4
 set shiftwidth =4
 let IM_CtrlMode = 4
